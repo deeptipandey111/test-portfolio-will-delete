@@ -23593,3 +23593,6 @@ label.btn {
 /*------------------------------------
   File for your custom SCSS style
 ------------------------------------*/
+.dp-logo {
+  font-size: 1.75em;
+}
