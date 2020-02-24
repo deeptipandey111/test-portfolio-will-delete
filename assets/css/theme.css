@@ -23601,3 +23601,9 @@ label.btn {
   color: #1e2022 !important;
   background: #ffc107;
 }
+
+.bg-img-hero-contain {
+  background-size: auto 480px;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
