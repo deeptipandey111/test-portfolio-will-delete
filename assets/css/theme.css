@@ -23614,3 +23614,10 @@ label.btn {
   background-repeat: no-repeat;
   background-position: top center;
 }
+
+.deepti-presentation {
+  height: 600px;
+  background-size: contain;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+}
