@@ -814,17 +814,17 @@
 
       <div class="col-lg-7 position-relative">
             <!-- Video Block -->
-            <div id="youTubeVideoPlayer" class="u-video-player mb-5">
+            <div id="youTubeVideoPlayer2" class="u-video-player mb-5">
               <!-- Cover Image -->
               <img class="img-fluid u-video-player__preview" src="../assets/img/dimages/paper-thumbnail.jpg" alt="Image">
               <!-- End Cover Image -->
 
               <!-- Play Button -->
-              <a class="js-inline-video-player u-video-player__btn u-video-player__centered" href="javascript:;"
-                 data-video-id="xKao2Psb8OA"
-                 data-parent="youTubeVideoPlayer"
+              <a class="js-inline-video-player-2 u-video-player__btn u-video-player__centered" href="javascript:;"
+                 data-video-id="brAaeqYEajU"
+                 data-parent="youTubeVideoPlayer2"
                  data-is-autoplay="true"
-                 data-target="youTubeVideoIframe"
+                 data-target="youTubeVideoIframe2"
                  data-classes="u-video-player__played">
                 <span class="u-video-player__icon u-video-player__icon--lg text-primary">
                   <span class="fas fa-play u-video-player__icon-inner"></span>
@@ -834,7 +834,7 @@
 
               <!-- Video Iframe -->
               <div class="embed-responsive embed-responsive-16by9">
-                <div id="youTubeVideoIframe"></div>
+                <div id="youTubeVideoIframe2"></div>
               </div>
               <!-- End Video Iframe -->
             </div>
@@ -1143,6 +1143,8 @@
 
       // initialization of video player
       $.HSCore.components.HSVideoPlayer.init('.js-inline-video-player');
+      $.HSCore.components.HSVideoPlayer.init('.js-inline-video-player-2');
+      
 
     });
 
