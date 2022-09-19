@@ -153,9 +153,9 @@
                "centerPadding": "50px"
              }
            }]'>
-        <div class="js-slide rounded bg-img-hero min-height-450" style="background-image: url(./assets/img/1200x800/img1.jpg);"></div>
-        <div class="js-slide rounded bg-img-hero min-height-450" style="background-image: url(./assets/img/1200x800/img2.jpg);"></div>
-        <div class="js-slide rounded bg-img-hero min-height-450" style="background-image: url(./assets/img/1200x800/img3.jpg);"></div>
+        <div class="js-slide rounded bg-img-hero min-height-450" style="background-image: url(./assets/img/dimages/ai_illus.png);"></div>
+        <div class="js-slide rounded bg-img-hero min-height-450" style="background-image: url(./assets/img/dimages/ai_workflow_serialised.png);"></div>
+        <div class="js-slide rounded bg-img-hero min-height-450" style="background-image: url(./assets/img/dimages/ai_working_illus.png);"></div>
       </div>
       <!-- End Images Carousel -->
 
@@ -282,11 +282,92 @@
           <h3>Part 1: Think</h3>
 
 
-          <p>So our scientist team began to look into ways to automate some of these processes. </p>
+          <p>I began by learning more about the problem, where it stems from, documenting assumptions from various stakeholders, formultation the ideal case scenarios, and analysing user behavior. I also wanted to understand more about how the underlying technology works, how well users rely on it, and what kind of biases the automatic models could be prone to. At large, these were the questions I sought answers to:</p>
 
-          <p>Launched in February 2014, Front is the fastest growing business application ever and is used by thousands of teams and millions of users every day. We currently have eight offices worldwide, in San Francisco, Vancouver, Dublin, Melbourne, New York, London, Tokyo, and Toronto.</p>
+          <!-- List -->
+          <ul class="list-unstyled mb-0">
+            <li class="py-3">
+              <div class="media">
+                <span class="btn btn-xs btn-icon btn-soft-danger rounded-circle mr-3">
+                  <span class="fas fa-question btn-icon__inner"></span>
+                </span>
+                <div class="media-body text-secondary">
+                  What do we know about automated labeling?
+                </div>
+              </div>
+            </li>
+            <li class="py-3">
+              <div class="media">
+                <span class="btn btn-xs btn-icon btn-soft-danger rounded-circle mr-3">
+                  <span class="fas fa-question btn-icon__inner"></span>
+                </span>
+                <div class="media-body text-secondary">
+                  How well do automated models perform?
+                </div>
+              </div>
+            </li>
+            <li class="py-3">
+              <div class="media">
+                <span class="btn btn-xs btn-icon btn-soft-danger rounded-circle mr-3">
+                  <span class="fas fa-question btn-icon__inner"></span>
+                </span>
+                <div class="media-body text-secondary">
+                  How do users percieve automated labeling?
+                </div>
+              </div>
+            </li>
+            <li class="py-3">
+              <div class="media">
+                <span class="btn btn-xs btn-icon btn-soft-danger rounded-circle mr-3">
+                  <span class="fas fa-question btn-icon__inner"></span>
+                </span>
+                <div class="media-body text-secondary">
+                  What can we learn from previous attempts at human-ai coworking?
+                </div>
+              </div>
+            </li>
+            <li class="py-3">
+              <div class="media">
+                <span class="btn btn-xs btn-icon btn-soft-danger rounded-circle mr-3">
+                  <span class="fas fa-question btn-icon__inner"></span>
+                </span>
+                <div class="media-body text-secondary">
+                  What are our current assumptions about the usage of the ideal implemenation?
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- End List -->
+          <br>
+          <p>I conducted various brainstorming sessions with our CTO, data scientists, product managers, and engineers and collected information about these factors. I also made sure that most of these sessions were recorded and noted the salient points of each meeting in a confluence page. Then I separated facts from assumptions and created scripts for verifying some of the assumptions from the core team by conducting semi-structured interviews with users, both internal (our global workflorce) and external (clients with in-house labeling teams).  </p>
 
-          <p>Ensuring a diverse and inclusive workplace where we learn from each other is core to Front's values. We welcome people of different backgrounds, experiences, abilities and perspectives. We are an equal opportunity employer and a fun place to work. Come do the best work of your life here at Front.</p>
+          <p>In my interviews with the subject matter experts I learned that there are many third party models that can be used for automatic data lebeling. Amazon MXNet, Tensorflow Core, Google AutoML, are some of the popular tools that can be used and implemented. Each of these come with their own pros and cons, but some of the things that are widely similar in each of these models are that they are all fairly new in the game. Computer vision has made significant growth in the past few decades, but it still falls short on reducing human work significantly. Each of these also come with their specific implementation requirements and for our system to be recpetive to them. Lastly, it is important to note that most of these models, while not all that impressive charge a hefty fee for use, which increases exponentially. So our business needed to figure out cost-effective to make use of them and actually be more economical than the alternative. </p>
+
+          <p>In my interviews with end users, I learned that they had very little faith in automated models. It stems both from experience with them and also a fear of becoming less effective that them. I spoke to over 12 end users and learned that their experience with automated models in the past has been bleak at best</p>
+
+           <blockquote class="card bg-soft-primary border-0 text-center font-size-2 font-weight-medium text-lh-md p-5 my-5">
+          "Those models work poorly. It costed me several seconds per annotation to fix their drawings. I could have started from scratch in lesser time."
+            <span class="d-block text-muted font-size-1 mt-2">- Independent contract user</span>
+          </blockquote>
+
+          <p>In these interviews I learned that there were varied levels of education and experiences with between the individuals. I also learned that the eutopic understanding from my core team was far from the possible implementation, but only in few areas. As a result I started breaking down the parts of each annotation. There are largely 2 sections: localizations and classification. Based on these I started charting out the various ways that automation could be used, and collected feedback from each party again. </p>
+
+          <h5> [OPTION 1]: Splitting the workflow into 2 sections: </h5>
+
+          <img class="img-fluid rounded" src="./assets/img/dimages/splitting_2stages.png" alt="Image Description">
+          <br><br>
+
+          <h5> [OPTION 2]: Learning in sequence, finishing after each stage: </h5>
+
+          <img class="img-fluid rounded" src="./assets/img/dimages/serial_learning.png" alt="Image Description">
+
+          <br><br>
+          <h5> [OPTION 3]: In task learning and model updates: </h5>
+
+          <img class="img-fluid rounded" src="./assets/img/dimages/async_workflow.png" alt="Image Description">
+
+
+          
         </div>
       </div>
     </div>
